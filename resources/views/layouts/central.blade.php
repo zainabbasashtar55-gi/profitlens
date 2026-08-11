@@ -16,7 +16,14 @@
     <nav class="bg-white border-b border-slate-200 @yield('nav-class')">
         <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
             <a href="{{ route('landing') }}" class="flex items-center gap-2 font-semibold text-lg">
-                <span class="inline-block w-7 h-7 rounded bg-indigo-600"></span>
+                <span class="pl-brandmark inline-grid w-8 h-8" aria-hidden="true">
+                    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <defs><linearGradient id="profitlens-logo" x1="4" y1="3" x2="28" y2="29"><stop stop-color="#55DCFF"/><stop offset=".48" stop-color="#8B7CFF"/><stop offset="1" stop-color="#5B35E8"/></linearGradient></defs>
+                        <rect x="2" y="2" width="28" height="28" rx="9" fill="url(#profitlens-logo)"/>
+                        <path d="M8.5 21.5V16.8M13.4 21.5V12.7M18.3 21.5V15.1M23.2 21.5V9.5" stroke="white" stroke-width="2.15" stroke-linecap="round"/>
+                        <path d="M8.5 13.2L13.4 9.8L18.3 11.5L23.2 6.9" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" opacity=".92"/>
+                    </svg>
+                </span>
                 ProfitLens
             </a>
             <div class="flex items-center gap-6 text-sm">
