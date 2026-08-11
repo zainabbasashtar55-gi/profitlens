@@ -21,6 +21,7 @@
 /vendor
 /database/*.sqlite
 /storage/tenant*
+/storage/framework/views/*.php
 Homestead.json
 Homestead.yaml
 Thumbs.db
