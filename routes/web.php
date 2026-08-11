@@ -34,7 +34,7 @@ foreach ($centralDomains as $index => $domain) {
     Route::domain($domain)
         ->as($index === $primaryDomainIndex ? '' : "central{$index}.")
         ->group(function () {
-        Route::view('/', 'welcome')->name('landing');
+        Route::view('/', 'welcome-redesign')->name('landing');
 
         Route::get('/signup', function (\Illuminate\Http\Request $request) {
             return view('central.signup', ['prefillPlan' => $request->query('plan')]);
