@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "ProfitLens Expense Clipper",
+  "version": "0.1.0",
+  "description": "Right-click a price and log it as a ProfitLens expense.",
+  "permissions": ["contextMenus", "storage", "activeTab"],
+  "host_permissions": ["https://*/api/v1/*", "http://*/api/v1/*"],
+  "background": {
+    "service_worker": "service-worker.js"
+  }
+}

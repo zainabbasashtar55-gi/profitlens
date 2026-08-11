@@ -1,0 +1,32 @@
+{
+  "name": "ProfitLens",
+  "description": "Automate ProfitLens sales, expenses, and revenue alerts with Zapier.",
+  "authentication": {
+    "type": "session",
+    "test": "/api/v1/auth/me"
+  },
+  "triggers": {
+    "new_sale": {
+      "url": "/api/v1/integrations/zapier/triggers/sales",
+      "sample": {
+        "id": 1,
+        "sale_date": "2026-07-02",
+        "revenue": 1200,
+        "profit": 450,
+        "status": "paid",
+        "customer_name": "Acme Co"
+      }
+    },
+    "new_expense": {
+      "url": "/api/v1/integrations/zapier/triggers/expenses",
+      "sample": {
+        "id": 1,
+        "expense_date": "2026-07-02",
+        "amount": 89.5,
+        "vendor": "Software Vendor",
+        "description": "Monthly subscription",
+        "category": "Software"
+      }
+    }
+  }
+}
