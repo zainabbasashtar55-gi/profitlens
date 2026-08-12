@@ -8,6 +8,7 @@ RUN npm run build
 
 FROM composer:2 AS dependencies
 WORKDIR /app
+RUN docker-php-ext-install bcmath
 COPY . .
 RUN composer install --no-dev --prefer-dist --no-interaction --no-progress \
     --optimize-autoloader
@@ -16,7 +17,7 @@ FROM php:8.2-cli-alpine
 WORKDIR /app
 RUN apk add --no-cache icu-libs libzip postgresql-libs \
     && apk add --no-cache --virtual .build-deps icu-dev libzip-dev postgresql-dev \
-    && docker-php-ext-install intl pdo_pgsql zip \
+    && docker-php-ext-install bcmath intl pdo_pgsql zip \
     && apk del .build-deps
 COPY . .
 COPY --from=dependencies /app/vendor ./vendor

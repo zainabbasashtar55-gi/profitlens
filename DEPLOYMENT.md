@@ -15,7 +15,9 @@ production financial records. Free services sleep and their filesystems are ephe
    receipts, API keys, or customer data.
 2. Create a Neon project and copy its direct Postgres connection string.
 3. In Render, create a Blueprint from the repository.
-4. Set `DATABASE_URL`, `APP_URL`, `TENANT_DOMAIN`, and `CENTRAL_DOMAINS` when prompted.
+4. Set `APP_KEY`, `DATABASE_URL`, `APP_URL`, `TENANT_DOMAIN`, and
+   `CENTRAL_DOMAINS` when prompted. Generate `APP_KEY` locally with
+   `php artisan key:generate --show`; do not invent a value or reuse the local key.
 5. Add the central hostname as a Render custom domain.
 6. Point both the central hostname and its wildcard to Render, and verify TLS.
 7. Deploy. The container runs central migrations and optimization before startup.
