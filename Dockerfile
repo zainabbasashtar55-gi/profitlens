@@ -15,9 +15,9 @@ RUN composer install --no-dev --prefer-dist --no-interaction --no-progress \
 
 FROM php:8.2-cli-alpine
 WORKDIR /app
-RUN apk add --no-cache icu-libs libzip postgresql-libs \
-    && apk add --no-cache --virtual .build-deps icu-dev libzip-dev postgresql-dev \
-    && docker-php-ext-install bcmath intl pdo_pgsql zip \
+RUN apk add --no-cache libzip postgresql-libs \
+    && apk add --no-cache --virtual .build-deps libzip-dev postgresql-dev \
+    && docker-php-ext-install bcmath pdo_pgsql zip \
     && apk del .build-deps
 COPY . .
 COPY --from=dependencies /app/vendor ./vendor
